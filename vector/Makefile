@@ -1,3 +1,3 @@
 all:
-	$(CXX) -std=c++14 -O2 main.cpp -o vector -lbenchmark
+	$(CXX) -Wall -std=c++14 -O2 -fno-omit-frame-pointer main.cpp -o vector -lbenchmark
 
