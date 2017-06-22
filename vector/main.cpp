@@ -28,15 +28,48 @@ public:
 
 constexpr std::size_t N = 1000;
 
-// Define another benchmark
+namespace Memory
+{
+  void end(void* p)
+  {
+    asm volatile("" : : "g"(p) : "memory");
+  }
+
+  void read()
+  {
+    asm volatile("" : : : "memory");
+  }
+};
+
+static void create(benchmark::State& state) {
+
+  while(state.KeepRunning())
+  {
+    std::vector<Test> v;
+    Memory::end(&v);
+    (void)v;
+  }
+} 
+
+static void reserve(benchmark::State& state) {
+  while(state.KeepRunning())
+  {
+    std::vector<Test> v;
+    v.reserve(N);
+    Memory::end(v.data());
+  }
+}
+
 static void push_back(benchmark::State& state) {
   while (state.KeepRunning())
   {
     std::vector<Test> v;
+    Memory::end(&v);
     for(std::size_t i = 0; i < N; i++)
     {
       v.push_back(Test("test", i, i*10.0f, i*100.0f));
     }
+    Memory::read();
   }
 }
 
@@ -45,10 +78,12 @@ static void push_back_reserve(benchmark::State& state) {
   {
     std::vector<Test> v;
     v.reserve(N);
+    Memory::end(v.data());
     for(std::size_t i = 0; i < N; i++)
     {
       v.push_back(Test("test", i, i*10.0f, i*100.0f));
     }
+    Memory::read();
   }
 }
 
@@ -58,10 +93,12 @@ static void emplace_back_reserve(benchmark::State& state) {
   {
     std::vector<Test> v;
     v.reserve(N);
+    Memory::end(v.data());
     for(std::size_t i = 0; i < N; i++)
     {
       v.emplace_back("test", i, i*10.0f, i*100.0f);
     }
+    Memory::read();
   }
 }
 
@@ -69,10 +106,12 @@ static void emplace_back(benchmark::State& state) {
   while (state.KeepRunning())
   {
     std::vector<Test> v;
+    Memory::end(&v);
     for(std::size_t i = 0; i < N; i++)
     {
       v.emplace_back("test", i, i*10.0f, i*100.0f);
     }
+    Memory::read();
   }
 }
 
