@@ -1,4 +1,5 @@
 # C++ performance measurments
+[!Build Status](https://travis-ci.org/michal915/Bench.svg?branch=master)
 
 ## Building
 ```
