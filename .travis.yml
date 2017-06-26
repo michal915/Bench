@@ -1,0 +1,30 @@
+sudo: required
+
+language: cpp
+compiler:
+    - gcc
+    - clang
+
+install:
+    - if [ "$CXX" = "g++" ]; then export CXX="g++-6"; fi
+
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+            - george-edison55-precise-backports
+        packages:
+            - g++-6
+            - lcov
+            - libgtest-dev
+            - cmake
+            - cmake-data
+
+script: 
+    - mkdir build
+    - cd build
+    - cmake .. 
+    - make 
+    - make test
+
+branch_pattern: master
