@@ -16,3 +16,4 @@ link_directories(${EXTERNAL_INSTALL_LOCATION}/lib)
 
 add_subdirectory(vector)
 add_subdirectory(string)
+add_subdirectory(cache-miss)
