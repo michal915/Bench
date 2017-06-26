@@ -42,7 +42,7 @@ namespace Memory
   {
     asm volatile("" : : : "memory");
   }
-};
+}
 
 static void create(benchmark::State& state) {
 
@@ -193,4 +193,4 @@ BENCHMARK(emplace_back_reserveN);
 BENCHMARK(reserveN);
 
 
-BENCHMARK_MAIN();
+BENCHMARK_MAIN()

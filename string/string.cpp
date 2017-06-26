@@ -12,7 +12,7 @@ namespace Memory
   {
     asm volatile("" : : : "memory");
   }
-};
+}
 
 
 class String
@@ -137,4 +137,4 @@ BENCHMARK(ovrlR);
 
 
 
-BENCHMARK_MAIN();
+BENCHMARK_MAIN()

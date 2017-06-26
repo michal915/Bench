@@ -1,9 +1,7 @@
 project(Bench CXX)
 cmake_minimum_required(VERSION 2.8)
 
-
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -O2 -fno-omit-frame-pointer")
+set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -O2 -fno-omit-frame-pointer -fno-exceptions -fno-rtti -pedantic -Werror")
 
 include(ExternalProject)
 
