@@ -25,6 +25,7 @@ script:
     - cd build
     - cmake .. 
     - make 
-    - make test
+    - ./vector/vector
+    - ./string/string
 
 branch_pattern: master
