@@ -1,11 +1,11 @@
-## Some C++ performance measurments
+# Some C++ performance measurments
 
-# Building
+## Building
 ```
 $ mkdir build && cd build && cmake .. && make
 ```
 
-# Usage with perf: 
+## Usage with perf: 
 ```
 $ perf record -g ./executable
 $ perf report -g 'graph,0.5,caller'
