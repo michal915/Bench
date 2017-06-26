@@ -1,4 +1,4 @@
-# Some C++ performance measurments
+# C++ performance measurments
 
 ## Building
 ```
