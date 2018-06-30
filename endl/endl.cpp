@@ -15,7 +15,7 @@ public:
   {
     std::cout.setstate(std::ios::failbit);
   }
-  
+
   ~ClearStream()
   {
     std::cout.clear();
@@ -55,4 +55,4 @@ BENCHMARK(_n_r);
 
 
 
-BENCHMARK_MAIN()
+BENCHMARK_MAIN();

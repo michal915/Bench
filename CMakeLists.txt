@@ -1,7 +1,7 @@
 project(Bench CXX)
 cmake_minimum_required(VERSION 2.8)
 
-set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -O2 -fno-omit-frame-pointer -fno-exceptions -fno-rtti -pedantic -Werror")
+set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -O2 -fno-omit-frame-pointer -fno-exceptions -fno-rtti -pedantic")
 
 include(ExternalProject)
 
@@ -18,3 +18,4 @@ add_subdirectory(vector)
 add_subdirectory(string)
 add_subdirectory(cache-miss)
 add_subdirectory(endl)
+add_subdirectory(state-machine)

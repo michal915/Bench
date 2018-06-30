@@ -58,7 +58,7 @@ static void moveL(benchmark::State& state) {
     String s;
     s.setMove(test);
   }
-} 
+}
 
 static void moveR(benchmark::State& state) {
 
@@ -77,7 +77,7 @@ static void crefL(benchmark::State& state) {
     String s;
     s.setcRef(test);
   }
-} 
+}
 
 static void crefR(benchmark::State& state) {
 
@@ -96,7 +96,7 @@ static void cpyL(benchmark::State& state) {
     String s;
     s.setCopy(test);
   }
-} 
+}
 
 static void cpyR(benchmark::State& state) {
 
@@ -115,7 +115,7 @@ static void ovrlL(benchmark::State& state) {
     String s;
     s.setOverl(test);
   }
-} 
+}
 
 static void ovrlR(benchmark::State& state) {
 
@@ -137,4 +137,4 @@ BENCHMARK(ovrlR);
 
 
 
-BENCHMARK_MAIN()
+BENCHMARK_MAIN();
